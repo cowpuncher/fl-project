@@ -1,0 +1,22 @@
+{
+  "name": "template-gulp-scss-pug",
+  "version": "1.0.0",
+  "description": "scss, pug, gulp, browsersync",
+  "main": "index.html",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/cowpuncher/fl-project.git"
+  },
+  "author": "Eugene Cowboy",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/cowpuncher/fl-project/issues"
+  },
+  "homepage": "https://github.com/cowpuncher/fl-project#readme",
+  "devDependencies": {
+    "gulp": "^4.0.2"
+  }
+}
