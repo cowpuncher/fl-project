@@ -1,0 +1,21 @@
+h1 {
+    font-size: 50px;
+    @media (max-width: 767px) {
+        font-size: 20px;
+    }
+}
+ul {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: justify;
+    -webkit-justify-content: space-between;
+       -moz-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+            @media (max-width: 767px) {
+                font-size: 10px;
+            }
+}
