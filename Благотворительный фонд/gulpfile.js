@@ -39,9 +39,8 @@ let { src, dest } = require('gulp'),
     webp = require('gulp-webp'),
     webphtml = require('gulp-webp-html'),
     uglify = require('gulp-uglify-es').default,
-    svgSprite = require('gulp-svg-sprite'),
-    ttf2woff = require('gulp-ttf2woff'),
-    ttf2woff2 = require('gulp-ttf2woff2');
+    woff = require('gulp-ttf2woff'),
+    woff2 = require('gulp-ttf2woff2');
 
 
 
@@ -53,6 +52,18 @@ const browserSync = params => {
         port: 3000,
         notify: false
     })
+}
+
+function sprite() {
+    return gulp.src('./src/iconsprite/**/*')
+        .pipe(svgstore({
+            inlineSvg:true
+        }))
+        .pipe(rename({
+            basename: 'icons',
+        }))
+        .pipe(gulp.dest('./build/images/svg'))
+        .pipe(browsersync.stream());
 }
 
 const html = () => {
@@ -80,7 +91,7 @@ const images = () => {
             optimizationLevel: 3 // 0 to 7
         })
     )
-    .pipe(startSprite())
+    .pipe(sprite())
     .pipe(dest(path.build.images))
     .pipe(browsersync.stream())
 }
@@ -128,10 +139,10 @@ const css = () => {
 
 const fonts = () => {
     src(path.src.fonts)
-        .pipe(ttf2woff())
+        .pipe(woff())
         .pipe(dest(path.build.fonts))
     return src(path.src.fonts)
-        .pipe(ttf2woff2())
+        .pipe(woff2())
         .pipe(dest(path.build.fonts))
 }
 

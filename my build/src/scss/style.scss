@@ -1,21 +1,35 @@
-h1 {
-    font-size: 50px;
-    @media (max-width: 767px) {
-        font-size: 20px;
-    }
+@import "./mixin.scss";
+@import "./variables.scss";
+@import "../components/elements/elem.scss";
+
+//ANCHOR Specification
+* {
+    -webkit-box-sizing: border-box;
+       -moz-box-sizing: border-box;
+            box-sizing: border-box;
 }
-ul {
-    display: -webkit-box;
-    display: -webkit-flex;
-    display: -moz-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-pack: justify;
-    -webkit-justify-content: space-between;
-       -moz-box-pack: justify;
-        -ms-flex-pack: justify;
-            justify-content: space-between;
-            @media (max-width: 767px) {
-                font-size: 10px;
-            }
+body {
+    font-family: 'Open Sans', sans-serif;
+    @include indentZeroing;
+    line-height: 1.425;
+    min-height: 100%;
+    position: relative;
+}
+p, h1, h2, h3, h4, h5, h6, ul, li {
+    @include indentZeroing;
+}
+// ANCHOR TITLES
+h1, h2, h3, h4, h5, h6 {
+    font-weight: 900;
+}
+ul, li {
+    list-style: none;
+}
+a {
+    text-decoration: none;
+}
+.container {
+    max-width: 1170px;
+    width: 100%;
+    margin: 0 auto;
 }
