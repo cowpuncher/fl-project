@@ -1,0 +1,46 @@
+  
+@mixin dFlex($align: center, $justify: space-between) {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: $align;
+    -webkit-align-items: $align;
+       -moz-box-align: $align;
+        -ms-flex-align: $align;
+            align-items: $align;
+    -webkit-box-pack:  $justify;
+    -webkit-justify-content:  $justify;
+       -moz-box-pack:  $justify;
+        -ms-flex-pack:  $justify;
+            justify-content: $justify;
+}
+@mixin card($cols, $margin) {
+    text-align: center;
+    text-decoration: unset;
+    color: unset;
+    margin-left: $margin;
+    margin-right: $margin;
+    width: ((100% - (($cols - 1) * $margin)) / $cols);
+    
+}
+@mixin cardImg($width: 300px, $height: 300px) {
+    background: $bgColorWhite;
+    @include dFlex($justify: center);
+    -webkit-border-radius: 20px;
+    -moz-border-radius: 20px;
+         border-radius: 20px;
+         -webkit-box-shadow: $cardShadow;
+            -moz-box-shadow: $cardShadow;
+                 box-shadow: $cardShadow;
+                 position: relative;
+                 overflow: hidden;
+    width: $width;
+    height: $height;
+    margin-bottom: 13px;
+}
+@mixin indentZeroing {
+    padding: 0;
+    margin: 0;
+}

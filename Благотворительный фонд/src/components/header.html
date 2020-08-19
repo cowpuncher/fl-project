@@ -1,0 +1,45 @@
+<header class="header">
+    <div class="container">
+        <nav class="nav-menu">
+            <ul class="nav-menu__list">
+                <li nav-menu__list-item>
+                    @@include('elements/link.html', {
+                        "link": "Кому помочь"
+                    })
+                </li>
+                <li nav-menu__list-item>
+                    @@include('elements/link.html', {
+                        "link": "Получить помощь"
+                    })
+                </li>
+                <li nav-menu__list-item>
+                    @@include('elements/link.html', {
+                        "link": "Сотрудничество"
+                    })
+                </li>
+                <li nav-menu__list-item>
+                    @@include('elements/link.html', {
+                        "link": "Кому помогли"
+                    })
+                </li>
+                <li nav-menu__list-item>
+                    @@include('elements/link.html', {
+                        "link": "Отчеты фонда"
+                    })
+                </li>
+            </ul>
+            <div class="block-contacts">
+                @@include('elements/contact.html', {
+                    "destination": "tel:",
+                    "link": "+375 29 663 35 10",
+                    "desc": "мобильный телефон"
+                })
+                @@include('elements/contact.html', {
+                    "destination": "mailto:",
+                    "link": "hello@mail.ru",
+                    "desc": "электронная почта"
+                })
+            </div>
+        </nav>
+    </div>
+</header>
